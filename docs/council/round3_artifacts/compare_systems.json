@@ -1,0 +1,146 @@
+{
+ "nemotron_zs_default(p3b zs_star) g0": {
+  "c0": " 26.97 [M  6.90 FA  6.85 C 13.22]",
+  "c0.25": " 25.13 [M  6.35 FA  5.85 C 12.93]",
+  "c0.5(=NeMo 0.25)": " 23.34 [M  5.83 FA  4.86 C 12.65]",
+  "sum_abs_count_err": 192,
+  "per_rec_c0": {
+   "train_001": 45.35,
+   "train_002": 38.07,
+   "train_003": 13.51,
+   "train_004": 11.39,
+   "train_005": 30.78,
+   "train_006": 42.31,
+   "train_008": 7.24,
+   "train_009": 36.58,
+   "train_011": 28.59,
+   "train_013": 56.9
+  }
+ },
+ "nemotron_zs_default(p3b zs_star) g5": {
+  "c0": " 26.97 [M  6.90 FA  6.85 C 13.22]",
+  "c0.25": " 25.13 [M  6.35 FA  5.85 C 12.93]",
+  "c0.5(=NeMo 0.25)": " 23.34 [M  5.83 FA  4.86 C 12.65]",
+  "sum_abs_count_err": 192,
+  "per_rec_c0": {
+   "train_001": 45.35,
+   "train_002": 38.07,
+   "train_003": 13.51,
+   "train_004": 11.39,
+   "train_005": 30.78,
+   "train_006": 42.31,
+   "train_008": 7.24,
+   "train_009": 36.58,
+   "train_011": 28.59,
+   "train_013": 56.9
+  }
+ },
+ "nemotron_zs_default(p3b zs_star) g0 floor": {
+  "c0": " 24.91 [M  6.15 FA  6.03 C 12.73]",
+  "c0.25": " 23.69 [M  5.87 FA  5.27 C 12.55]",
+  "c0.5(=NeMo 0.25)": " 22.42 [M  5.59 FA  4.47 C 12.36]",
+  "sum_abs_count_err": 167,
+  "per_rec_c0": {
+   "train_001": 43.58,
+   "train_002": 36.95,
+   "train_003": 10.63,
+   "train_004": 12.39,
+   "train_005": 28.86,
+   "train_006": 37.71,
+   "train_008": 7.34,
+   "train_009": 33.29,
+   "train_011": 24.07,
+   "train_013": 53.09
+  }
+ },
+ "nemotron_zs_default(p3b zs_star) g5 floor": {
+  "c0": " 24.91 [M  6.15 FA  6.03 C 12.73]",
+  "c0.25": " 23.69 [M  5.87 FA  5.27 C 12.55]",
+  "c0.5(=NeMo 0.25)": " 22.42 [M  5.59 FA  4.47 C 12.36]",
+  "sum_abs_count_err": 167,
+  "per_rec_c0": {
+   "train_001": 43.58,
+   "train_002": 36.95,
+   "train_003": 10.63,
+   "train_004": 12.39,
+   "train_005": 28.86,
+   "train_006": 37.71,
+   "train_008": 7.34,
+   "train_009": 33.29,
+   "train_011": 24.07,
+   "train_013": 53.09
+  }
+ },
+ "pyannote_community1_exclusive g0": {
+  "c0": " 46.04 [M 27.89 FA  5.42 C 12.74]",
+  "c0.25": " 44.59 [M 27.69 FA  4.50 C 12.40]",
+  "c0.5(=NeMo 0.25)": " 43.18 [M 27.52 FA  3.60 C 12.06]",
+  "sum_abs_count_err": 52,
+  "per_rec_c0": {
+   "train_001": 65.68,
+   "train_002": 62.54,
+   "train_003": 36.83,
+   "train_004": 30.47,
+   "train_005": 39.81,
+   "train_006": 60.06,
+   "train_008": 33.46,
+   "train_009": 55.42,
+   "train_011": 48.1,
+   "train_013": 65.36
+  }
+ },
+ "pyannote_community1_exclusive g5": {
+  "c0": " 29.91 [M  6.40 FA  7.35 C 16.16]",
+  "c0.25": " 28.00 [M  5.99 FA  6.26 C 15.75]",
+  "c0.5(=NeMo 0.25)": " 26.10 [M  5.61 FA  5.15 C 15.33]",
+  "sum_abs_count_err": 52,
+  "per_rec_c0": {
+   "train_001": 50.13,
+   "train_002": 51.96,
+   "train_003": 17.1,
+   "train_004": 11.48,
+   "train_005": 29.41,
+   "train_006": 53.58,
+   "train_008": 7.73,
+   "train_009": 45.35,
+   "train_011": 29.28,
+   "train_013": 53.4
+  }
+ },
+ "pyannote_community1_exclusive g0 floor": {
+  "c0": " 43.96 [M 26.36 FA  4.75 C 12.85]",
+  "c0.25": " 42.98 [M 26.38 FA  4.05 C 12.55]",
+  "c0.5(=NeMo 0.25)": " 41.95 [M 26.41 FA  3.32 C 12.23]",
+  "sum_abs_count_err": 52,
+  "per_rec_c0": {
+   "train_001": 63.84,
+   "train_002": 60.53,
+   "train_003": 33.81,
+   "train_004": 30.8,
+   "train_005": 38.16,
+   "train_006": 56.16,
+   "train_008": 32.78,
+   "train_009": 51.58,
+   "train_011": 44.76,
+   "train_013": 62.29
+  }
+ },
+ "pyannote_community1_exclusive g5 floor": {
+  "c0": " 28.51 [M  5.70 FA  6.79 C 16.02]",
+  "c0.25": " 27.04 [M  5.51 FA  5.86 C 15.67]",
+  "c0.5(=NeMo 0.25)": " 25.50 [M  5.31 FA  4.89 C 15.31]",
+  "sum_abs_count_err": 52,
+  "per_rec_c0": {
+   "train_001": 48.3,
+   "train_002": 50.59,
+   "train_003": 15.28,
+   "train_004": 12.31,
+   "train_005": 28.48,
+   "train_006": 50.48,
+   "train_008": 7.85,
+   "train_009": 41.82,
+   "train_011": 27.09,
+   "train_013": 50.15
+  }
+ }
+}

@@ -1,0 +1,1 @@
+Start with [REPORT.md](REPORT.md). All numbers are exploratory. Main metrics: [metrics.csv](metrics.csv). Raw evidence and methods are linked from the report. No repository files were modified; CPU only.

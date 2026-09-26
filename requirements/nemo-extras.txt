@@ -1,0 +1,3 @@
+pyannote.metrics==4.1
+pytest
+setproctitle

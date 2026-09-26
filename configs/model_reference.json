@@ -1,0 +1,13 @@
+{
+ "system": "ZS",
+ "kind": "pinned base checkpoint (no training)",
+ "path": "/mnt/sdb/arafat/ehz/llm/bengali-diarization-nemotron/data/weights/nemotron3/Nemotron-3-Diarization.nemo",
+ "path_rel": "data/weights/nemotron3/Nemotron-3-Diarization.nemo",
+ "sha256": "867c53f552998f772e5b5e5c082962ae85ee7ca5669c2bc17d7f615133d4e96d",
+ "hf_model_id": "nvidia/Nemotron-3-Diarization",
+ "hf_revision": "f667ed73aee57d40cc39428eb768b4fd87a0a29e",
+ "hf_file": "Nemotron-3-Diarization.nemo",
+ "class": "nemo.collections.asr.models.SortformerEncLabelModel",
+ "restore": "strict=True",
+ "nemo_commit": "cf724ac337d1ebc7d0dda1e23fb80916f52927a5"
+}

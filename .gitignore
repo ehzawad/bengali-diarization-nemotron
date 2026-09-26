@@ -1,0 +1,11 @@
+# data, weights and run outputs are never committed (licences; size)
+data/
+runs/
+third_party/
+*.nemo
+*.ckpt
+*.npz
+*.npy
+*.log
+__pycache__/
+.pytest_cache/

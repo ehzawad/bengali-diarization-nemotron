@@ -1,0 +1,105 @@
+{
+ "created": "2026-09-25T23:27:14",
+ "prereg": "docs/PREREG_phase3b.md",
+ "default_system": "ZS",
+ "config_key": "s20_avg_g5_a0.40_c0.60",
+ "decoding": {
+  "session_core_s": 20,
+  "context_s": 5.0,
+  "native_streaming": {
+   "spkcache_len": 264,
+   "fifo_len": 40,
+   "chunk_len": 340,
+   "chunk_right_context": 40,
+   "spkcache_update_period": 300
+  },
+  "precision": "bf16-autocast",
+  "batch": 1,
+  "theta_act": 0.4,
+  "min_turn_s": 0.1,
+  "weak_usable_s": 1.0,
+  "linker": "avg",
+  "theta_clu": 0.6,
+  "gap_fill_s": 5.0,
+  "decoder": "phase-2 exclusive timeline (bnd.link.frame_labels) then same-speaker gap-fill",
+  "sample_rate": 16000
+ },
+ "model": {
+  "sha256": "867c53f552998f772e5b5e5c082962ae85ee7ca5669c2bc17d7f615133d4e96d",
+  "path_rel": "data/weights/nemotron3/Nemotron-3-Diarization.nemo",
+  "reference": "model_reference.json"
+ },
+ "embedder": {
+  "model": "pyannote/wespeaker-voxceleb-resnet34-LM",
+  "revision": "837717ddb9ff5507820346191109dc79c958d614",
+  "crop_policy": {
+   "usable_frames": "track active (p>=theta_act, 0.1 s min turn) and all other 7 channels < theta_act; usable runs < 0.1 s dropped",
+   "pieces": "usable runs concatenated in time order, cut into k=ceil(L/4) equal pieces (1.5-4 s each when L>=1.5 s); 0.5<=L<1.5 s -> one short piece; L<0.5 s -> no crop (NaN row)",
+   "strong_short_band": "DECISION 2026-09-25 (pre-DER; PREREG undefined): strong tracks with 1.0<=usable<1.5 s stay strong and are embedded from their single short piece of all usable speech (no padding, no non-usable audio)",
+   "valid_length": "each crop embedded alone at its true sample length, no padding",
+   "track_embedding": "duration-weighted mean of L2-normalised crop embeddings, L2-normalised",
+   "weak": "usable_speech_s < 1.0",
+   "window_scope": "core + context (whole window input)"
+  }
+ },
+ "provenance": {
+  "rule": "Default = FT if Q1 'fine-tuning helps', else ZS. Final configuration = joint mode of the five inner selections of the default system (ties -> simpler).",
+  "q1": {
+   "collar": 0.0,
+   "zs": 26.9698808156232,
+   "ft": 27.68753589890863,
+   "delta": 0.7176550832854349,
+   "lo": -2.475719554385875,
+   "hi": 4.166769199910734,
+   "wins": 4,
+   "losses": 6,
+   "macro_pp": 1.5813854523869513,
+   "conditions_pass": {
+    "corpus_delta_le_-1pp": false,
+    "bootstrap_p97_5_lt_0": false,
+    "improved_ge_6_of_10": false,
+    "macro_mean_delta_lt_0": false
+   },
+   "harm": false,
+   "verdict": "no demonstrated benefit over calibrated zero-shot decoding"
+  },
+  "finetuning_helps": false,
+  "per_fold_inner_selection": {
+   "F1": "s20_avg_g5_a0.40_c0.60",
+   "F2": "s20_avg_g5_a0.40_c0.60",
+   "F3": "s20_avg_g5_a0.40_c0.60",
+   "F4": "s20_avg_g5_a0.40_c0.60",
+   "F5": "s20_avg_g5_a0.40_c0.60"
+  },
+  "joint_mode": {
+   "config": "s20_avg_g5_a0.40_c0.60",
+   "count": 5,
+   "of": 5,
+   "tied": [
+    "s20_avg_g5_a0.40_c0.60"
+   ],
+   "counts": {
+    "s20_avg_g5_a0.40_c0.60": 5
+   }
+  },
+  "results_json_sha256": "c7b5b3250d1da0194773e3d023f200f589c4de004487eccd55582278ff64c91a",
+  "frozen_identity": "657353de149880c93e5a8a734fb47f2752b7066844bd0928cd0f9d6664d97319",
+  "scored": "2026-09-25T23:10:27",
+  "selection_json_sha256": "25e4e775cd90f4471eb05a614fb4b642e6daa5b7c4d891de4883cea16942b030",
+  "frozen_json_sha256": "0bfb78a2159128919fb04b78e87af29ddafec576a0f5bd5cbb1c79c84cc2df9d",
+  "code_sha256": {
+   "infer": "0ec930f4b7eba2e7724c8031c6128f8c2042e285d37a774a74977bc18bb7be79",
+   "embed": "65ac196522e73a200ed61af13183185a96d9389f7464f93310180a72ee220adf",
+   "link": "c731e596ee7938488bde4480b3a91909455a8c5ee048104c20fb7ff993070c12",
+   "p3b": "d2602d9e18c085bc7bc5efc253c3a0ae60a2651a0c0a6cb2c433ddd2c3d6ecf7",
+   "diarize": "b799fc9a5605c98020dc6e70ce3d9e0f540db9e450e8418c592c86409c547ab7"
+  },
+  "nemo_commit": "cf724ac337d1ebc7d0dda1e23fb80916f52927a5"
+ },
+ "disclosures": [
+  "SECOND-LOOK: every phase-3b factor (session length, theta_act < 0.40, refine linker, gap-fill) was motivated by phase-2 OUTER-fold diagnostics; selection used inner folds only.",
+  "Any DER of this configuration over all 10 labelled recordings is a DEVELOPMENT number, never held-out.",
+  "One training seed; 10 recordings; coarse references (all onsets/durations whole seconds).",
+  "Speaker over-counting: the selected ZS system predicted sum |pred-ref| = 192 speakers over the 10 outer recordings (e.g. 68 vs 17 on train_006)."
+ ]
+}

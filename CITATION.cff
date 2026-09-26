@@ -1,0 +1,36 @@
+cff-version: 1.2.0
+message: "If you use this code or its findings, please cite it as below."
+title: "Bengali long-form speaker diarization with NVIDIA Nemotron-3-Diarization: a controlled study of fine-tuning, decoding conventions and cross-window speaker linking"
+authors:
+  - family-names: Zawad
+    given-names: Emrul
+    email: ehzawad@icloud.com
+type: software
+version: 1.0.0
+date-released: 2026-09-26
+license: MIT
+keywords:
+  - speaker diarization
+  - Bengali
+  - Bangla
+  - Nemotron-3-Diarization
+  - Sortformer
+  - long-form audio
+  - evaluation methodology
+references:
+  - type: article
+    title: "Bengali-Loop: Community Benchmarks for Long-Form Bangla ASR and Speaker Diarization"
+    authors:
+      - family-names: Tabib
+        given-names: H. M. Shadman
+      - name: "et al."
+    year: 2026
+    identifiers:
+      - type: other
+        value: "arXiv:2602.14291"
+  - type: software
+    title: "Nemotron-3-Diarization"
+    authors:
+      - name: NVIDIA
+    year: 2026
+    url: "https://huggingface.co/nvidia/Nemotron-3-Diarization"
